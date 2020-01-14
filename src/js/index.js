@@ -5,6 +5,7 @@ class Game {
     this.gameLaunchButton = gameSettings.gameLaunchButton;
     this.gameField = gameSettings.gameField;
     this.gameTimeDisplay = gameSettings.gameTimeDisplay;
+    this.gameTimeDisplaySettings = gameSettings.gameTimeDisplaySettings;
 
     this.init();
   }
@@ -13,12 +14,16 @@ class Game {
     this.gameLaunchButton.addEventListener("click", () => {
       this.gameLaunchButtonHandler();
     });
+
+    this.gameTimeDisplaySettings.addEventListener("change", () => {
+      this.gameTimeDisplaySettingsHandler();
+    });
   }
 
   gameLaunchButtonHandler() {
     this.gameLaunchButton.parentNode.classList.add("hide");
     this.gameField.classList.add("gameFieldStyle");
-    this.gameTimer()
+    this.gameTimer();
   }
 
   gameTimer() {
@@ -31,6 +36,17 @@ class Game {
       }
     }, 100);
   }
+
+  gameTimeDisplaySettingsHandler() {
+    const time = Number(this.gameTimeDisplaySettings.value);
+    if (time <= 0) {
+      this.gameTimeDisplay.textContent = (5).toFixed(1);
+      this.gameTimeDisplaySettings.value = 5;
+    } else {
+      this.gameTimeDisplay.textContent = time.toFixed(1);
+    }
+    // this.gameTimeTitleStartStyle();
+  }
 }
 
 const game = new Game({
@@ -38,5 +54,8 @@ const game = new Game({
     ".header-content__button-start-game"
   ),
   gameField: document.querySelector(".header-content__wrapper-game-fields"),
-  gameTimeDisplay: document.querySelector(".header-content__time-game")
+  gameTimeDisplay: document.querySelector(".header-content__time-game"),
+  gameTimeDisplaySettings: document.querySelector(
+    ".header-content__settings-game-time"
+  )
 });
