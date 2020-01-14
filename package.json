@@ -1,0 +1,26 @@
+{
+  "name": "gulp-4",
+  "version": "1.0.0",
+  "description": "Сборка проекта на основе gulp-4",
+  "main": "index.js",
+  "keywords": [],
+  "author": {
+    "name": "Ikrom Murodov",
+    "email": "ikrommurodov2001@gmail.com"
+  },
+  "homepage": "https://github.com/Ikrom-Murodov",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglifyes": "^0.2.1",
+    "imagemin-pngquant": "^8.0.0"
+  }
+}
