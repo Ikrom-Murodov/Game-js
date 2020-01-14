@@ -36,6 +36,7 @@ class Game {
     this.gameTimeDisplay.textContent = this.gameTimeDisplaySettings.value;
     this.gameTimer();
     this.randomSquares();
+    this.gameTimeDisplaySettings.disabled = true
   }
 
   gameTimer() {
@@ -56,6 +57,7 @@ class Game {
     this.gameField.classList.remove("gameFieldStyle");
     this.gameTimeTitleResultStyle();
     this.gameTimeDisplayResult.textContent = this.gameCounter;
+    this.gameTimeDisplaySettings.disabled = false
   }
 
   gameTimeDisplaySettingsHandler() {
