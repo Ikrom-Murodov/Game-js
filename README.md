@@ -27,3 +27,6 @@ gulp development
 ```
 
 > Данная команда запустить проект
+
+[Вот ссылка для просмотра самого проекта](https://ikrom-murodov.github.io/gameJS.github.io/)
+
