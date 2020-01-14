@@ -23,6 +23,7 @@ class Game {
   gameLaunchButtonHandler() {
     this.gameLaunchButton.parentNode.classList.add("hide");
     this.gameField.classList.add("gameFieldStyle");
+    this.gameTimeDisplay.textContent = this.gameTimeDisplaySettings.value;
     this.gameTimer();
   }
 
@@ -30,11 +31,18 @@ class Game {
     const interval = setInterval(() => {
       const time = this.gameTimeDisplay.textContent;
       if (time <= 0) {
+        this.gameOver();
         clearInterval(interval);
       } else {
         this.gameTimeDisplay.textContent = (time - 0.1).toFixed(1);
       }
     }, 100);
+  }
+
+  gameOver() {
+    this.gameField.innerText = "";
+    this.gameLaunchButton.parentNode.classList.remove("hide");
+    this.gameField.classList.remove("gameFieldStyle");
   }
 
   gameTimeDisplaySettingsHandler() {
