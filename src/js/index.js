@@ -6,6 +6,10 @@ class Game {
     this.gameField = gameSettings.gameField;
     this.gameTimeDisplay = gameSettings.gameTimeDisplay;
     this.gameTimeDisplaySettings = gameSettings.gameTimeDisplaySettings;
+    this.gameTimeTitle = gameSettings.gameTimeTitle;
+    this.gameTimeTitleResult = gameSettings.gameTimeTitleResult;
+    this.gameTimeDisplayResult = gameSettings.gameTimeDisplayResult;
+    this.gameCounter = 0;
 
     this.init();
   }
@@ -25,8 +29,10 @@ class Game {
   }
 
   gameLaunchButtonHandler() {
+    this.gameCounter = 0;
     this.gameLaunchButton.parentNode.classList.add("hide");
     this.gameField.classList.add("gameFieldStyle");
+    this.gameTimeTitleStartStyle();
     this.gameTimeDisplay.textContent = this.gameTimeDisplaySettings.value;
     this.gameTimer();
     this.randomSquares();
@@ -48,6 +54,8 @@ class Game {
     this.gameField.innerText = "";
     this.gameLaunchButton.parentNode.classList.remove("hide");
     this.gameField.classList.remove("gameFieldStyle");
+    this.gameTimeTitleResultStyle();
+    this.gameTimeDisplayResult.textContent = this.gameCounter;
   }
 
   gameTimeDisplaySettingsHandler() {
@@ -58,7 +66,17 @@ class Game {
     } else {
       this.gameTimeDisplay.textContent = time.toFixed(1);
     }
-    // this.gameTimeTitleStartStyle();
+    this.gameTimeTitleStartStyle();
+  }
+
+  gameTimeTitleResultStyle() {
+    this.gameTimeTitle.classList.add("hide");
+    this.gameTimeTitleResult.classList.remove("hide");
+  }
+
+  gameTimeTitleStartStyle() {
+    this.gameTimeTitle.classList.remove("hide");
+    this.gameTimeTitleResult.classList.add("hide");
   }
 
   randomSquares() {
@@ -107,5 +125,10 @@ const game = new Game({
   gameTimeDisplay: document.querySelector(".header-content__time-game"),
   gameTimeDisplaySettings: document.querySelector(
     ".header-content__settings-game-time"
-  )
+  ),
+  gameTimeTitle: document.querySelector(".header-content__wrapper-time-game"),
+  gameTimeTitleResult: document.querySelector(
+    ".header-content__wrapper-time-result-game"
+  ),
+  gameTimeDisplayResult: document.querySelector(".header-content__result-game")
 });
