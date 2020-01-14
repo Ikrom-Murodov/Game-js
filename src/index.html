@@ -4,11 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Gulp</title>
+    <title>GameJS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Hello Gulp</h1>
+    <header class="header header__body">
+      <div class="container header__container">
+        <div class="header__wrapper-content">
+          <div class="header-content header__content">
+            <div class="header-content__wrapper-time-game">
+              <h3 class="header-content__time-title-game">
+                Время игры <span class="header-content__time-game">5.0</span>
+              </h3>
+            </div>
+
+            <div class="header-content__wrapper-time-result-game hide">
+              <h3 class="header-content__time-title-game-result">
+                Ваш результат: <span class="header-content__result-game"></span>
+              </h3>
+            </div>
+
+            <div class="header-content__wrapper-button-start-game">
+              <button class="header-content__button-start-game">
+                Начать игру
+              </button>
+            </div>
+
+            <div class="header-content__wrapper-game-fields"></div>
+
+            <div class="header-content__wrapper-settings-game-time">
+              <div class="header-content__wrapper-settings-game-time-title">
+                <span class="header-content__settings-game-time-title"
+                  >Время игры в (сек)</span
+                >
+              </div>
+              <div class="header-content__wrapper-settings-game">
+                <input
+                  type="number"
+                  class="header-content__settings-game-time"
+                  value="5"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     <script src="js/index.js"></script>
   </body>
 </html>

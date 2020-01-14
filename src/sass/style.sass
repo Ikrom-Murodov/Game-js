@@ -1,10 +1,106 @@
 html
-  font-size: 20px
-  
-body 
+  font-size: 10px
+
+body
+  margin: 0
+  padding: 0
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+
+h1,h2,h3,h4,h5,h6
   margin: 0
   padding: 0
 
-h1,h2,h3,h4,h5,h6 
-  padding: 0
-  margin: 0
+*
+  box-sizing: border-box
+
+
+.header
+  width: 100%
+
+
+  &__container
+    width: 100%
+    height: 100vh
+    background-color: #B8445A
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 1rem
+
+  &__wrapper-content
+    width: 100%
+    max-width: 45rem
+    height: 50rem
+    border-radius: 1rem
+    background-color: #fff
+    padding: 1rem
+
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    position: relative
+
+
+
+
+
+.header-content
+
+  &__time-title-game, &__time-title-game-result
+    font-size: 3rem
+
+  &__wrapper-game-fields
+    width: 100%
+    max-width: 35rem
+    height: 35rem
+    background-color: #C11E5A
+    position: relative
+    border-radius: 1rem
+
+  &__wrapper-button-start-game
+    position: absolute
+    top: 50%
+    z-index: 2
+
+  &__button-start-game
+    font-size: 2rem
+    border-radius: .4rem
+    text-transform: uppercase
+    letter-spacing: .2rem
+    border: .1rem solid white
+    outline: none
+    cursor: pointer
+    transition: color .3s,  background-color .4s
+
+    &:hover
+      color: white
+      background-color: #C11E5A
+
+  &__settings-game-time-title
+    font-size: 1.4rem
+
+  &__settings-game-time
+    font-size: 1.5rem
+    padding: 1rem
+    border: .1rem solid black
+    border-radius: .3rem
+    margin-top: .4rem
+
+
+
+.hide 
+  display: none
+
+.gameFieldStyle
+  background-color: #fff
+  border: 1px solid #C11E5A
+
+.randomSquaresStyle
+  cursor: pointer
+  position: absolute
+  border-radius: 1rem
